@@ -1,103 +1,85 @@
-import Image from "next/image";
 
-export default function Home() {
+import Header from './components/Header';
+import Footer from './components/Footer';
+import HomePageHero from './components/HomePageHero';
+import Services from './components/Services';
+import Works from './components/Works';
+import wave from '../public/image/18px Wavy.png'
+import Image from 'next/image';
+
+
+
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="font-poppins bg-white min-h-screen  text-gray-900">
+      <Header />
+      
+      <main>
+        {/* Hero Section (Similar to Image 1 top part) */}
+        <HomePageHero/>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        
+
+        {/* Things We Enjoy / Our Services Section (Similar to Image 2) */}
+        <Services/>
+
+        <Works />
+        
+        {/* We craft experiences for business Section (Similar to Image 2 bottom part) */}
+        <section id="about" className="bg-white py-20 md:py-32 ">
+            <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+                 <div className="text-left">
+                    <h2 className="text-3xl md:text-4xl bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text font-bold leading-tight">
+                        We craft experiences for<br/> business to help reach<br/>
+                        <span className="relative inline-block bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text">
+                            our customers
+                            <span className="absolute left-0 bottom-0 h-3 w-full bg-indigo-200 opacity-70 rounded-md -z-10 transform translate-y-2"></span>
+                        </span>
+                    </h2>
+                    <p className="mt-6 max-w-lg text-base text-gray-700">
+                        We don't just build a website and walk away. Our process ensures that SEO, content, design, and user experience work in harmony from day one. A beautifully designed website is useless if no one can find it.
+                    </p>
+                    <div className="mt-8">
+                        <a href="#contact" className="inline-block bg-gradient-to-br text-white font-semibold py-3 px-8 rounded-lg hover:shadow-[3px_4px_0px_0px] shadow-indigo-700 from-purple-500 to-indigo-500  transition-all duration-300">
+                        Learn more
+                        </a>
+                    </div>
+                </div>
+                {/* Placeholder Shape */}
+                <div className="hidden md:flex justify-center items-center h-full">
+                    <div className="w-64 h-full ">
+                      <Image src={wave} alt='' className='object-cover h-full w-full'/>
+                    </div>
+                    <div className="w-64 h-full ">
+                      <Image src={wave} alt='' className='object-cover h-full w-full'/>
+                    </div>
+                    <div className="w-64 h-full ">
+                      <Image src={wave} alt='' className='object-cover h-full w-full'/>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+
+        {/* Contact / CTA Section - Reusing previous footer CTA as it fits the clean style */}
+        <section id="contact" className="bg-gray-900 text-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold">Ready to Start a Project?</h2>
+            <p className="mt-4 text-lg text-gray-400">
+              Let's talk about your goals. We offer a free, no-obligation consultation to discuss your project.
+            </p>
+            <div className="mt-8">
+              <a href="mailto:contact@mentogram.in" className="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-transform duration-300 hover:scale-105">
+                Contact Us Now
+              </a>
+            </div>
+          </div>
+        </section>
+
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      
+      <Footer />
     </div>
   );
 }

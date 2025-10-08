@@ -1,26 +1,60 @@
+@font-face {
+  font-family: Modak;
+  src: url("../assets/fonts/Modak-Regular.ttf");
+}
+@font-face {
+  font-family: Barrio;
+  src: url("../assets/fonts/Barrio-Regular.ttf");
+}
+@font-face {
+  font-family: Ranchers;
+  src: url("../assets/fonts/Ranchers-Regular.ttf");
+}
+@font-face {
+  font-family: Inter-semibold;
+  src: url("../assets/fonts/Inter_28pt-SemiBold.ttf");
+}
+@font-face {
+  font-family: Poppins;
+  src: url("../assets/fonts/Poppins-Regular.ttf");
+}
+@font-face {
+  font-family: Poppins-medium;
+  src: url("../assets/fonts/Poppins-Medium.ttf");
+}
+@font-face {
+  font-family: Raleway;
+  src: url("../assets/fonts/Raleway-Regular.ttf");
+}
+
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html{
+    @apply scroll-smooth;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+:root {
+  --background: #fff;
+  --foreground: #f1f1f1;
+}
+
+@theme inline {
+  --font-barrio: Barrio, sans-serif;
+  --font-ranchers: Ranchers, sans-serif;
+  --font-modak: Modak, sans-serif;
+  --font-poppins: Poppins, sans-serif;
+  --font-poppins-medium: Poppins-medium, sans-serif;
+  --font-raleway: Raleway, sans-serif;
+  --font-inter-semibold: Inter-semibold, sans-serif;
+
+}
+
+
+.box {
+  --mask:
+    radial-gradient(56.58px at 50% calc(100% + 45px),#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% - 60px) calc(50% - 17.5px + .5px)/120px 35px ,
+    radial-gradient(56.58px at 50% -45px,#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) 50% calc(50% + 17.5px)/120px 35px ;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
 }
