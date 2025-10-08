@@ -38,11 +38,10 @@ const Services = () => {
             Our Services
           </h2>
           <motion.div
-            initial={{ opacity: 0, x: -150 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, ease: "easeIn" }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10"
-          >
+          initial={{opacity:0, x: -150}}
+                whileInView={{opacity:1, x:0}}
+                transition={{duration:0.6, ease: "easeIn"}}
+          className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10">
             {/* Column 1 */}
             <div>
               <NumberedServiceItem number="01" title="Web Design & Development">
@@ -59,7 +58,9 @@ const Services = () => {
               </NumberedServiceItem>
             </div>
             {/* Column 2 */}
-            <div>
+            <div
+            
+            >
               <NumberedServiceItem number="04" title="Wordpress">
                 From a memorable logo to a complete brand identity, we design
                 visuals that tell your story.

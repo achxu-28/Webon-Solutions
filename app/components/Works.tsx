@@ -2,8 +2,6 @@ import Image from 'next/image'
 import React from 'react'
 
 import work1 from '../../public/image/fredoFront.jpg'
-import work2 from '../../public/image/emraitesOpticals.jpg'
-import work3 from '../../public/image/mentogram.jpg'
 import wave2 from '../../public/image/wave2.png'
 
 

@@ -1,8 +1,8 @@
 "use client"
 import Image from "next/image";
 import React from "react";
-import l20 from "../../public/image/4-46.png";
-import smile from "../../public/image/smile.png";
+import l20 from "../../../public/image/4-46.png";
+import smile from "../../../public/image/smile.png";
 import { motion, useScroll, useTransform } from "motion/react";
 
 const HomePageHero = () => {
@@ -112,7 +112,7 @@ const HomePageHero = () => {
                 </span>
               </h2>
               <p className="mt-6 text-base text-gray-700 max-w-lg">
-                At Webon, we believe in building relationships, not just
+                At Webon Solutions, we believe in building relationships, not just
                 projects. Our integrated approach ensures that every piece of your
                 digital presence works together to achieve one thing: your
                 success. We are a team of passionate creators, strategists, and

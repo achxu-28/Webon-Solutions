@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <div className="font-poppins bg-white min-h-screen  text-gray-900">
+    <div className="font-poppins bg-white min-h-screen text-gray-900">
       <Header />
       
       <main>
@@ -38,7 +38,7 @@ export default function HomePage() {
                         </span>
                     </h2>
                     <p className="mt-6 max-w-lg text-base text-gray-700">
-                        We don't just build a website and walk away. Our process ensures that SEO, content, design, and user experience work in harmony from day one. A beautifully designed website is useless if no one can find it.
+                        We don&apos;t just build a website and walk away. Our process ensures that SEO, content, design, and user experience work in harmony from day one. A beautifully designed website is useless if no one can find it.
                     </p>
                     <div className="mt-8">
                         <a href="#contact" className="inline-block bg-gradient-to-br text-white font-semibold py-3 px-8 rounded-lg hover:shadow-[3px_4px_0px_0px] shadow-indigo-700 from-purple-500 to-indigo-500  transition-all duration-300">
@@ -67,10 +67,10 @@ export default function HomePage() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
             <h2 className="text-3xl md:text-4xl font-bold">Ready to Start a Project?</h2>
             <p className="mt-4 text-lg text-gray-400">
-              Let's talk about your goals. We offer a free, no-obligation consultation to discuss your project.
+              Let&apos;s talk about your goals. We offer a free, no-obligation consultation to discuss your project.
             </p>
             <div className="mt-8">
-              <a href="mailto:contact@mentogram.in" className="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-transform duration-300 hover:scale-105">
+              <a href="mailto:contact@webonsolutions.in" className="inline-block bg-white text-gray-900 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition-transform duration-300 hover:scale-105">
                 Contact Us Now
               </a>
             </div>
