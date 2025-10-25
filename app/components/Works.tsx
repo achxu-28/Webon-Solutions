@@ -1,47 +1,103 @@
-import Image from 'next/image'
-import React from 'react'
+// src/components/Works.js (or your file path)
+"use client"; // Add this if you are using Next.js App Router
 
-import work1 from '../../public/image/fredoFront.jpg'
-import wave2 from '../../public/image/wave2.png'
+import Image from 'next/image';
+import React from 'react';
+import wave from '../../public/image/Horizontal Team Illustration.png'
 
+// Import your images
+import work1 from '../../public/image/fredoFront.jpg';
+// Add other project images here if you have them
+// import work2 from '../../public/image/project2.jpg';
+// import work3 from '../../public/image/project3.jpg';
+// import work4 from '../../public/image/project4.jpg';
 
+// Define your project data in an array for easy mapping
+const projects = [
+  {
+    image: work1,
+    title: "Fredo",
+    description: "E-Commerce Website",
+  },
+  {
+    image: work1, // Replace with different images
+    title: "Project Two",
+    description: "Mobile Application",
+  },
+  {
+    image: work1, // Replace with different images
+    title: "Project Three",
+    description: "Branding & Identity",
+  },
+  {
+    image: work1, // Replace with different images
+    title: "Project Four",
+    description: "Web Platform",
+  },
+    {
+    image: work1, // Replace with different images
+    title: "Project Five",
+    description: "Design System",
+  },
+];
 
 const Works = () => {
   return (
-    <div className='  py-20 flex flex-col gap-2 justify-start items-start md:py-32'>
-        
-      <h1 className='sticky z-3 bg-gradient-to-r from-indigo-500 to-purple-500 text-transparent bg-clip-text top-15 backdrop-blur-[10px] py-4 text-3xl md:text-4xl px-4 sm:px-6 lg:px-8 font-bold leading-tight lg:w-fit'>
-        Showcasing Some of Our <br />Recent Projects 
+    <div className=' relative  pt-25 pb-60 flex flex-col gap-14'>
+      {/* <div className='absolute bottom-0  right-10 w-250 '>
+        <Image src={wave} alt='A showcase of our work' 
+        className='object-cover  '/>
+      </div> */}
+
+
+      <h1 className='text-center text-black font-raleway  lg:px-8 py-3 leading-tight text-[34px] md:text-[45px] px-4 font-extrabold'>
+        Showcasing Some of <br />Our Recent Projects
       </h1>
-      <div className=' sticky w-full -left-4 top-[40%] lg:-top-40 z-1'>
-            <Image src={wave2} alt='' className='w-full blur-[6px] ' />
+
+      {/* Main container for the scroller */}
+      {/* - `overflow-hidden`: Hides the content that goes outside the container.
+        - `[mask-image:...]`: Creates a faded effect on the left and right edges.
+      */}
+
+      <div className="w-full overflow-hidden" >
+         {/* add for side gradient---> style={{
+        maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
+      }} */}
+
+        {/* - The inner div that holds the content and animates.
+          - `flex` and `w-max` lay out all children in a single, non-wrapping row.
+          - `animate-scroll` applies our custom animation defined in tailwind.config.js
+        */}
+
+        <div className="flex  w-max animate-scroll">
+          
+          {/* We map over the projects array twice ([...projects, ...projects]).
+            This duplication is the key to the infinite scroll illusion.
+            The animation moves the container by the width of the *original* set of projects,
+            and because the second set is identical, it looks like it's looping.
+          */}
+
+          {[...projects, ...projects].map((project, index) => (
+            <div 
+              key={index} // It's okay to use index here since the list is static
+              className='flex-shrink-0 w-80 p-2 mx-4 rounded-lg border border-gray-300/20  bg-white/40 backdrop-blur-[10px] '
+              style={{ boxShadow: "inset 0px 0px 10px rgba(255, 255, 255, 0.1)" }}
+            >
+              <Image 
+                src={project.image} 
+                alt={`${project.title} screenshot`}
+                className='rounded-md w-full'
+              />
+              <h2 className='mt-2 text-xl font-semibold text-gray-800'>
+                {project.title}{" "}
+                <span className='text-gray-400 font-normal'>— {project.description}</span>
+              </h2>
+            </div>
+          ))}
         </div>
-
-      <section className='flex flex-col md:flex-row flex-wrap z-2   w-full lg:w-fit gap-2 lg:gap-8 px-4 sm:pr-6 lg:pl-0
-       lg:space-y-5 lg:pr-8 lg:ml-[20%] items-center lg:justify-end justify-center'>
-        {/* IMAGE1  */}
-          <div style={{ boxShadow: "inset 0px 0px 10px rgba(0, 0, 0, 0.2)" }} className=' w-80 bg-white/10 backdrop-blur-[10px] border-gray-300 h-100 md:w-100 md:h-120 p-2 rounded-[10px] border-1'>
-            <Image src={work1} alt=''/>
-            <h1 className='mt-2 text-2xl'>Fredo <span className='text-gray-700'>— E-Commerce Website</span></h1>
-          </div>
-        {/* IMAGE2  */}
-          <div style={{ boxShadow: "inset 0px 0px 10px rgba(0, 0, 0, 0.2)" }} className=' w-80 bg-white/10 backdrop-blur-[10px] border-gray-300 h-100 md:w-100 md:h-120 lg:mt-20 p-2 rounded-[10px] border-1'>
-            <Image src={work1} alt=''/>
-            <h1 className='mt-2 text-2xl'>Fredo <span className='text-gray-700'>— E-Commerce Website</span></h1>
-          </div>
-        {/* IMAGE3  */}
-          <div style={{ boxShadow: "inset 0px 0px 10px rgba(0, 0, 0, 0.2)" }} className=' w-80 bg-white/10 backdrop-blur-[10px] border-gray-300 h-100 md:w-100 md:h-120 p-2 rounded-[10px] border-1'>
-            <Image src={work1} alt=''/>
-            <h1 className='mt-2 text-2xl'>Fredo <span className='text-gray-700'>— E-Commerce Website</span></h1>
-          </div>
-        {/* IMAGE4  */}
-          <div style={{ boxShadow: "inset 0px 0px 10px rgba(0, 0, 0, 0.2)" }} className=' w-80 bg-white/10 backdrop-blur-[10px] border-gray-300 h-100 md:w-100 md:h-120 lg:mt-20 p-2 rounded-[10px] border-1'>
-            <Image src={work1} alt=''/>
-            <h1 className='mt-2 text-2xl'>Fredo <span className='text-gray-700'>— E-Commerce Website</span></h1>
-          </div>
-      </section>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Works
+export default Works;

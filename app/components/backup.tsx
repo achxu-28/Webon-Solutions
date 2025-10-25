@@ -4,14 +4,13 @@ import React from "react";
 
 import l20 from "../../public/image/4-46.png";
 import bg from "../../public/image/aiBg.png";
-import smile from "../../public/image/talentedPeeps.png";
+import smile from "../../public/image/smile.png";
 import { motion } from "motion/react";
 
 const HomePageHero = () => {
   return (
     <div className=" bg-white -mt-16">
       <div className="relative h-[110vh] w-full  bg-red-200">
-        <div className="absolute flex w-full h-10  bottom-0 bg-gradient-to-b from-white/0 to-orange-50 z-20"></div>
         <div className=" ">
           <Image
             src={bg}
@@ -21,26 +20,35 @@ const HomePageHero = () => {
         </div>
 
         <div className="absolute inset-0 px-4 md:px-8 w-full h-full  flex items-end">
-          <section
-           className=" pb-25 pt-15 md:pt-25 md:pb-40 rounded-t-[30px] relative border-1 border-b-0 border-gray-400 backdrop-blur-[4px] bg-white/40 ">
-          {/* <div className="absolute w-full h-full inset-0 rounded-t-[30px] "
-          style={{ boxShadow: "inset -2px -2px 5px rgba(0, 0, 0, 0.4)" }}></div> */}
-            <div className="  mx-auto px-4 sm:px-6 lg:px-8 flex gap-12 items-center">
-              <div className="text-left flex flex-col items-center ">
+          <section className=" py-25 md:py-25 rounded-t-[30px] border-1 border-b-0 border-gray-400 backdrop-blur-[2px] bg-white/40 ">
+            <div className="container  mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-left  ">
                 <motion.div
                   initial={{ opacity: 0, x: -200 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.8, ease: "easeInOut" }}
-                  className="text-[45px] md:text-[70px] font-poppins-medium z-10 lg:pb-10 text-orange-800 font-extrabold leading-15 md:leading-20"
+                  className="text-[45px] md:text-[70px] font-poppins z-10   font-extrabold leading-15 md:leading-20"
                 >
-                  Design. Identity. Brands.
+                  Design.
+                  <br />
+                  Identity.
+                  <br />
+                  Brands.
+                  <br />
                 </motion.div>
-                
+                {/* <motion.div
+                  initial={{ opacity: 0, x: -150 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, ease: "easeIn" }}
+                  className="text-4xl bg-gradient-to-br from-gray-900 via-50% via-gray-300 to-60% to-gray-800 text-transparent bg-clip-text md:text-6xl font-extrabold leading-tight"
+                >
+                  with Hashflow
+                </motion.div> */}
                 <motion.div
                   initial={{ opacity: 0, x: -150 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.6, ease: "easeIn" }}
-                  className="mt-14 md:mt-6 text-[18px] px-4 lg:px-30 text-black leading-relaxed"
+                  className="mt-14 md:mt-6 text-[18px] text-black leading-relaxed"
                 >
                   <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text font-bold">
                     Hashflow
@@ -50,12 +58,10 @@ const HomePageHero = () => {
                   create apps that users love.
                 </motion.div>
 
-                <div className="flex gap-4 md:gap-8">
+                <div className="flex gap-8">
                   {/* button 1 */}
                   <div className="mt-8">
-                    <a
-                      href="#services"
-                      className="inline-block bg-gradient-to-br  text-white font-semibold py-3 px-6 
+                    <a href="#services" className="inline-block bg-gradient-to-br  text-white font-semibold py-3 px-8 
                     rounded-lg hover:shadow-[3px_4px_0px_0px] shadow-orange-700 from-orange-500 to-yellow-500  transition-all duration-300"
                     >
                       See our work
@@ -63,16 +69,14 @@ const HomePageHero = () => {
                   </div>
                   {/* button 2 */}
                   <div className="mt-8">
-                    <a
-                      href="#services"
-                      className="inline-block bg-white  text-orange-500 font-semibold py-3 px-6
+                    <a href="#services" className="inline-block bg-white  text-orange-500 font-semibold py-3 px-8 
                     rounded-lg hover:shadow-[3px_4px_0px_0px] shadow-orange-700 border-orange-400 border-1   transition-all duration-300"
                     >
                       contact us
                     </a>
                   </div>
                 </div>
-              </div>
+                </div>
 
               {/* Placeholder Shape */}
               {/* <div className="hidden md:flex justify-center items-center h-full">
@@ -86,7 +90,7 @@ const HomePageHero = () => {
       </div>
 
       {/* Powered by Talented People Section (Similar to Image 1 bottom part) */}
-      <section className=" py-20 z-2 bg-orange-50 md:py-32">
+      <section className=" py-20 z-2 bg-orange-100 md:py-32">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
           {/* Placeholder Shape */}
           <div className="hidden md:flex justify-center items-center h-full order-2 md:order-1">
@@ -94,15 +98,12 @@ const HomePageHero = () => {
               initial={{ opacity: 0, x: -150 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, ease: "easeInOut" }}
-              className="rounded-[20px] w-80 relative overflow-hidden"
+              className="w-80 h-80"
             >
-              <div className="absolute w-full  inset-0 h-full rounded-[20px] backdrop-blur-[1px]"
-               style={{ boxShadow: "inset -2px -2px 5px rgba(0, 0, 0, 0.4)" }}></div>
-               <div className="absolute w-full  top-40 h-220 rotate-45 blur-[4px]  bg-white/20"></div>
               <Image
                 src={smile}
                 alt="Hero Image"
-                className="w-full h-full rounded-[20px] "
+                className="w-full h-full p-10  "
               />
             </motion.div>
           </div>

@@ -51,10 +51,28 @@
 }
 
 
+
+/* Your existing global.css content above */
+/* ... */
 .box {
-  --mask:
-    radial-gradient(56.58px at 50% calc(100% + 45px),#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% - 60px) calc(50% - 17.5px + .5px)/120px 35px ,
+  --mask: radial-gradient(56.58px at 50% calc(100% + 45px),#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) calc(50% - 60px) calc(50% - 17.5px + .5px)/120px 35px ,
     radial-gradient(56.58px at 50% -45px,#0000 calc(99% - 5px),#000 calc(101% - 5px) 99%,#0000 101%) 50% calc(50% + 17.5px)/120px 35px ;
   -webkit-mask: var(--mask);
           mask: var(--mask);
+}
+
+/* === ADD THIS CODE BELOW === */
+
+@layer utilities {
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .animate-scroll {
+    animation: scroll 40s linear infinite;
+  }
 }
