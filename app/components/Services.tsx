@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import WaveUp from "../smallThings/WaveUp";
-import WaveDown from "../smallThings/WaveDown";
 import * as motion from "motion/react-client";
 
 import img1 from "../../public/image/Horizontal Team Illustration.png";

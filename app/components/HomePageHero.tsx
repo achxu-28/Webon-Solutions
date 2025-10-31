@@ -1,28 +1,26 @@
-"use client";
 import Image from "next/image";
 import React from "react";
 
-import l20 from "../../public/image/4-46.png";
 import bg from "../../public/image/aiBg.png";
 import smile from "../../public/image/talentedPeeps.png";
-import { motion } from "motion/react";
+import * as motion from "motion/react-client"
 
 const HomePageHero = () => {
   return (
     <div className=" bg-white -mt-16">
-      <div className="relative h-[110vh] w-full  bg-red-200">
+      <div className="relative h-[100vh] md:h-[110vh] w-full  bg-red-200">
         <div className="absolute flex w-full h-10  bottom-0 bg-gradient-to-b from-white/0 to-orange-50 z-20"></div>
         <div className=" ">
           <Image
             src={bg}
             alt="Hero Image"
-            className="object-cover z-1 h-[110vh] w-full"
+            className="object-cover z-1 h-[100vh] md:h-[110vh] w-full"
           />
         </div>
 
         <div className="absolute inset-0 px-4 md:px-8 w-full h-full  flex items-end">
           <section
-           className=" pb-25 pt-15 md:pt-25 md:pb-40 rounded-t-[30px] relative border-1 border-b-0 border-gray-400 backdrop-blur-[4px] bg-white/40 ">
+           className=" pb-25 pt-20 md:pt-25 md:pb-40 rounded-t-[30px] relative border-1 border-b-0 border-gray-400 backdrop-blur-[4px] bg-white/40 shadow-[0px_-5px_11px_-9px] ">
           {/* <div className="absolute w-full h-full inset-0 rounded-t-[30px] "
           style={{ boxShadow: "inset -2px -2px 5px rgba(0, 0, 0, 0.4)" }}></div> */}
             <div className="  mx-auto px-4 sm:px-6 lg:px-8 flex gap-12 items-center">
